@@ -1,8 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy Plassmann demo to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [claude/plassmann-demo-website-email-ncnppa]
+    paths: ['plassmann-demo/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 
 permissions:
@@ -32,7 +33,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./plassmann-demo
 
       - name: Deploy to GitHub Pages
         id: deployment
